@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dakphwh8q4546"]
+
+[ext_resource type="Script" path="res://Gameplay/Levels/Level01.gd" id="1_5obdo"]
+[ext_resource type="Texture2D" uid="uid://dna1efa6bkeyb" path="res://dungeon 2.svg" id="1_jpo1g"]
+[ext_resource type="Script" path="res://Gameplay/Levels/Enemy.gd" id="3_ap0hh"]
+[ext_resource type="Texture2D" uid="uid://crctoy3wyekr" path="res://goblin 1.png" id="3_v67v0"]
+[ext_resource type="Theme" uid="uid://koyo704iyd7m" path="res://Resources/default_theme.tres" id="4_3xlqu"]
+[ext_resource type="Script" path="res://Gameplay/Levels/Player.gd" id="6_w7tar"]
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1_5obdo")
+
+[node name="Dungeon2" type="Sprite2D" parent="."]
+position = Vector2(248, 509)
+texture = ExtResource("1_jpo1g")
+
+[node name="Enemy" type="Node2D" parent="."]
+position = Vector2(280, 793)
+script = ExtResource("3_ap0hh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+position = Vector2(0.999992, -170)
+scale = Vector2(0.539795, 0.535156)
+texture = ExtResource("3_v67v0")
+
+[node name="HPLabel" type="RichTextLabel" parent="Enemy/Sprite2D"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -702.5
+offset_top = -512.0
+offset_right = -321.5
+offset_bottom = -382.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_3xlqu")
+text = "50HP"
+tab_size = 10
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("6_w7tar")
+
+[node name="HealthLabel" type="RichTextLabel" parent="Player"]
+offset_left = 211.0
+offset_top = 46.0
+offset_right = 300.0
+offset_bottom = 121.0
+theme = ExtResource("4_3xlqu")
+text = "100"
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AttackButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 205.0
+offset_right = 386.0
+offset_bottom = 306.0
+theme = ExtResource("4_3xlqu")
+text = "ATTACK"
+
+[connection signal="pressed" from="UI/AttackButton" to="." method="_on_attack_button_pressed"]
