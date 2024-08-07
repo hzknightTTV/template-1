@@ -1,3 +1,4 @@
+# Player.gd (keep this comment)
 extends Node2D
 
 var health: int = 100:
@@ -9,22 +10,25 @@ var health: int = 100:
 	get:
 		return health
 
-var attack: int = 20
+var attack: int = 10
 var defense: int = 10
-var agility: int = 15
-var weapon_damage: int = 15
-var experience: int = 0  # Renamed from exp to experience
+var strength: int = 10
+var weapon_damage: int = 0
+var experience: int = 0
+var ap: int = 10  # Action Points
 
-@onready var HealthLabel = $HealthLabel  # Ensure this path is correct
+@onready var HealthLabel = $Panel/HBoxContainer/HP
+@onready var APLabel = $Panel/HBoxContainer/AP
 
 func _ready():
 	update_health_label()
+	update_ap_label()  # Update AP label on ready
 
 func calculate_damage():
 	return attack + weapon_damage
 
 func take_damage(damage: int):
-	var actual_damage = max(damage - defense, 0)  # Reduce damage by defense, ensuring it doesn't go below 0
+	var actual_damage = max(damage - defense, 0)
 	health -= actual_damage
 	update_health_label()
 	if health == 0:
@@ -36,10 +40,16 @@ func gain_experience(amount: int):
 	# Add your logic for leveling up or other exp-related features
 
 func update_health_label():
-	if HealthLabel:  # Check if HealthLabel exists
-		HealthLabel.text = str(health)
+	if HealthLabel:
+		HealthLabel.text = str(health) + " HP"
 	else:
 		print("HealthLabel not found.")
+
+func update_ap_label():
+	if APLabel:
+		APLabel.text = str(ap) + " AP"
+	else:
+		print("APLabel not found.")
 
 func die():
 	print("The player has died.")

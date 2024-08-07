@@ -1,8 +1,9 @@
+# Enemy.gd (keep this comment)
 extends Node2D
 
-var hp: int = 25:
+var hp: int = 100:
 	set(value):
-		hp = max(value, 0)  # Ensure hp doesn't go below 0
+		hp = max(value, 0)
 		update_hp_label()
 		if hp == 0:
 			die()
@@ -11,7 +12,7 @@ var hp: int = 25:
 
 @onready var HPLabel = $Sprite2D/HPLabel
 
-var strength: int = 10
+var attack: int = 15
 var exp_reward: int = 50
 
 func _ready():
@@ -21,22 +22,21 @@ func take_damage(damage: int):
 	hp -= damage
 
 func update_hp_label():
-	HPLabel.text = str(hp)
+	HPLabel.text = str(hp) + " HP"
 
 func die():
 	print("The enemy has died.")
 	drop_loot()
 	award_exp()
-	queue_free()  # Remove the enemy from the scene
+	queue_free()
 
 func drop_loot():
-	# Example loot table
 	var loot_table = [
-		{"item": "Gold", "chance": 0.5},
-		{"item": "Potion", "chance": 0.3},
-		{"item": "Sword", "chance": 0.2}
+		{"item": "Gold", "chance": 0.2},
+		{"item": "Potion", "chance": 0.1},
+		{"item": "Sword", "chance": 0.07}
 	]
-	
+
 	for loot in loot_table:
 		if randf() < loot["chance"]:
 			print("Dropped: ", loot["item"])
@@ -56,4 +56,4 @@ func attack_player():
 		player.take_damage(damage)
 
 func calculate_damage():
-	return strength  # You can add more complex calculations if needed
+	return attack

@@ -1,66 +1,148 @@
-[gd_scene load_steps=7 format=3 uid="uid://dakphwh8q4546"]
+[gd_scene load_steps=8 format=3 uid="uid://dakphwh8q4546"]
 
 [ext_resource type="Script" path="res://Gameplay/Levels/Level01.gd" id="1_5obdo"]
 [ext_resource type="Texture2D" uid="uid://dna1efa6bkeyb" path="res://dungeon 2.svg" id="1_jpo1g"]
 [ext_resource type="Script" path="res://Gameplay/Levels/Enemy.gd" id="3_ap0hh"]
-[ext_resource type="Texture2D" uid="uid://crctoy3wyekr" path="res://goblin 1.png" id="3_v67v0"]
 [ext_resource type="Theme" uid="uid://koyo704iyd7m" path="res://Resources/default_theme.tres" id="4_3xlqu"]
+[ext_resource type="Texture2D" uid="uid://blo08i53pi8nv" path="res://wraith queen 1.png" id="4_nmwyv"]
+[ext_resource type="FontFile" uid="uid://bigk2731sywkd" path="res://Resources/Evil Empire.otf" id="5_tno5l"]
 [ext_resource type="Script" path="res://Gameplay/Levels/Player.gd" id="6_w7tar"]
 
 [node name="Level01" type="Node2D"]
+position = Vector2(0, -2)
 script = ExtResource("1_5obdo")
 
+[node name="APTimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
 [node name="Dungeon2" type="Sprite2D" parent="."]
-position = Vector2(248, 509)
+position = Vector2(264, 515)
 texture = ExtResource("1_jpo1g")
 
 [node name="Enemy" type="Node2D" parent="."]
-position = Vector2(280, 793)
+position = Vector2(305, 788)
 script = ExtResource("3_ap0hh")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-position = Vector2(0.999992, -170)
-scale = Vector2(0.539795, 0.535156)
-texture = ExtResource("3_v67v0")
+modulate = Color(1, 1, 1, 0.694118)
+position = Vector2(-9, -379)
+scale = Vector2(0.585007, 0.568115)
+texture = ExtResource("4_nmwyv")
 
 [node name="HPLabel" type="RichTextLabel" parent="Enemy/Sprite2D"]
+custom_minimum_size = Vector2(124, 124)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -702.5
-offset_top = -512.0
-offset_right = -321.5
-offset_bottom = -382.0
+offset_left = -710.288
+offset_top = -690.001
+offset_right = -414.288
+offset_bottom = -566.001
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("4_3xlqu")
-text = "50HP"
+theme_override_fonts/normal_font = ExtResource("5_tno5l")
+theme_override_font_sizes/normal_font_size = 124
+theme_override_font_sizes/bold_font_size = 124
+theme_override_font_sizes/italics_font_size = 124
+theme_override_font_sizes/bold_italics_font_size = 124
+theme_override_font_sizes/mono_font_size = 124
+text = "100 HP"
+scroll_active = false
 tab_size = 10
 
 [node name="Player" type="Node2D" parent="."]
+position = Vector2(280, 860)
 script = ExtResource("6_w7tar")
 
-[node name="HealthLabel" type="RichTextLabel" parent="Player"]
-offset_left = 211.0
-offset_top = 46.0
-offset_right = 300.0
-offset_bottom = 121.0
+[node name="Panel" type="Panel" parent="Player"]
+offset_left = -256.0
+offset_top = -339.0
+offset_right = 243.0
+offset_bottom = -238.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="HP" type="Label" parent="Player/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(156, 64)
+layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("4_3xlqu")
-text = "100"
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AP" type="Label" parent="Player/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(156, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_3xlqu")
+text = "AP"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 
-[node name="AttackButton" type="Button" parent="UI"]
+[node name="GridContainer" type="GridContainer" parent="UI"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 205.0
-offset_right = 386.0
-offset_bottom = 306.0
+offset_left = 18.0
+offset_top = 649.0
+offset_right = 546.0
+offset_bottom = 937.0
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="AttackButton" type="Button" parent="UI/GridContainer"]
+custom_minimum_size = Vector2(248, 124)
+layout_mode = 2
 theme = ExtResource("4_3xlqu")
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 64
+theme_override_constants/icon_max_width = 64
 text = "ATTACK"
 
-[connection signal="pressed" from="UI/AttackButton" to="." method="_on_attack_button_pressed"]
+[node name="HealButton" type="Button" parent="UI/GridContainer"]
+custom_minimum_size = Vector2(248, 124)
+layout_mode = 2
+theme = ExtResource("4_3xlqu")
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 64
+theme_override_constants/icon_max_width = 64
+text = "HEAL"
+
+[node name="EscapeButton" type="Button" parent="UI/GridContainer"]
+custom_minimum_size = Vector2(248, 124)
+layout_mode = 2
+theme = ExtResource("4_3xlqu")
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 64
+theme_override_constants/icon_max_width = 64
+text = "ESCAPE"
+
+[node name="InventoryButton" type="Button" parent="UI/GridContainer"]
+custom_minimum_size = Vector2(248, 124)
+layout_mode = 2
+theme = ExtResource("4_3xlqu")
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 64
+theme_override_constants/icon_max_width = 64
+text = "INVENTORY"
+
+[connection signal="pressed" from="UI/GridContainer/AttackButton" to="." method="_on_attack_button_pressed"]
