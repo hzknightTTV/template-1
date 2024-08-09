@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://behma7nlnm45l"
-path="res://.godot/imported/HOMESCREEN 1.svg-9ada5e4d485f6ec5b5d8b1a7d5cf9ac5.ctex"
+uid="uid://bfuo76w8vcnv"
+path="res://.godot/imported/hand crossbow 1.png-6a93f4713c876b7c13d34ca3d62a164c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://HOMESCREEN 1.svg"
-dest_files=["res://.godot/imported/HOMESCREEN 1.svg-9ada5e4d485f6ec5b5d8b1a7d5cf9ac5.ctex"]
+source_file="res://Resources/hand crossbow 1.png"
+dest_files=["res://.godot/imported/hand crossbow 1.png-6a93f4713c876b7c13d34ca3d62a164c.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

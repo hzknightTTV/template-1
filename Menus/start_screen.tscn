@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Menus/start_screen.gd" id="1_v6k1a"]
 [ext_resource type="Theme" uid="uid://koyo704iyd7m" path="res://Resources/default_theme.tres" id="3_fjldo"]
-[ext_resource type="Texture2D" uid="uid://behma7nlnm45l" path="res://HOMESCREEN 1.svg" id="3_xv7h4"]
+[ext_resource type="Texture2D" uid="uid://behma7nlnm45l" path="res://Resources/HOMESCREEN 1.svg" id="3_xv7h4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r03hu"]
 bg_color = Color(0, 0, 0, 1)
@@ -47,7 +47,7 @@ theme = ExtResource("3_fjldo")
 script = ExtResource("1_v6k1a")
 
 [node name="Dungeon2" type="Sprite2D" parent="."]
-position = Vector2(49, 476)
+position = Vector2(830, 478)
 texture = ExtResource("3_xv7h4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyojrnrifjwxy"]
+
+[ext_resource type="Script" path="res://Menus/Item.gd" id="1_oqb7r"]
+
+[node name="Item" type="Node2D"]
+z_index = 1
+script = ExtResource("1_oqb7r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+mouse_filter = 2

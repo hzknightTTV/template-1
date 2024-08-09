@@ -11,6 +11,9 @@ var hp: int = 100:
 		return hp
 
 @onready var HPLabel = $Sprite2D/HPLabel
+@onready var wraith_takes_damage = $WraithTakesDamage
+@onready var wraith_dies = $WraithDies
+
 
 var attack: int = 15
 var exp_reward: int = 50
@@ -20,6 +23,7 @@ func _ready():
 
 func take_damage(damage: int):
 	hp -= damage
+	wraith_takes_damage.play()
 
 func update_hp_label():
 	HPLabel.text = str(hp) + " HP"
@@ -28,13 +32,20 @@ func die():
 	print("The enemy has died.")
 	drop_loot()
 	award_exp()
-	queue_free()
+	
+	if wraith_dies:
+		await wraith_takes_damage.finished
+		wraith_dies.play()
+		await wraith_dies.finished # Wait until the sound finishes playing
+	
+	queue_free()  # Remove the enemy node after the sound effect
+
 
 func drop_loot():
 	var loot_table = [
-		{"item": "Gold", "chance": 0.2},
-		{"item": "Potion", "chance": 0.1},
-		{"item": "Sword", "chance": 0.07}
+		{"item": "Gold", "chance": 0.7},
+		{"item": "Potion", "chance": 0.5},
+		{"item": "Blood Staff", "chance": 0.1}
 	]
 
 	for loot in loot_table:

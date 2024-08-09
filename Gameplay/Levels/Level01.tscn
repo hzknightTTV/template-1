@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dakphwh8q4546"]
+[gd_scene load_steps=10 format=3 uid="uid://dakphwh8q4546"]
 
 [ext_resource type="Script" path="res://Gameplay/Levels/Level01.gd" id="1_5obdo"]
-[ext_resource type="Texture2D" uid="uid://dna1efa6bkeyb" path="res://dungeon 2.svg" id="1_jpo1g"]
+[ext_resource type="Texture2D" uid="uid://dna1efa6bkeyb" path="res://Resources/dungeon 2.svg" id="1_jpo1g"]
 [ext_resource type="Script" path="res://Gameplay/Levels/Enemy.gd" id="3_ap0hh"]
 [ext_resource type="Theme" uid="uid://koyo704iyd7m" path="res://Resources/default_theme.tres" id="4_3xlqu"]
-[ext_resource type="Texture2D" uid="uid://blo08i53pi8nv" path="res://wraith queen 1.png" id="4_nmwyv"]
+[ext_resource type="Texture2D" uid="uid://blo08i53pi8nv" path="res://Resources/wraith queen 1.png" id="4_nmwyv"]
 [ext_resource type="FontFile" uid="uid://bigk2731sywkd" path="res://Resources/Evil Empire.otf" id="5_tno5l"]
+[ext_resource type="AudioStream" uid="uid://gen54oucro36" path="res://Resources/Sounds/SFX/wraith_special_attack_1.mp3" id="6_4mmrg"]
 [ext_resource type="Script" path="res://Gameplay/Levels/Player.gd" id="6_w7tar"]
+[ext_resource type="AudioStream" uid="uid://ba2wo4k72bmax" path="res://Resources/Sounds/SFX/wraith_dies_2.mp3" id="7_dm03w"]
 
 [node name="Level01" type="Node2D"]
 position = Vector2(0, -2)
@@ -51,6 +53,12 @@ theme_override_font_sizes/mono_font_size = 124
 text = "100 HP"
 scroll_active = false
 tab_size = 10
+
+[node name="WraithTakesDamage" type="AudioStreamPlayer" parent="Enemy"]
+stream = ExtResource("6_4mmrg")
+
+[node name="WraithDies" type="AudioStreamPlayer" parent="Enemy"]
+stream = ExtResource("7_dm03w")
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(280, 860)
@@ -118,14 +126,14 @@ theme_override_constants/h_separation = 64
 theme_override_constants/icon_max_width = 64
 text = "ATTACK"
 
-[node name="HealButton" type="Button" parent="UI/GridContainer"]
+[node name="SpecialButton" type="Button" parent="UI/GridContainer"]
 custom_minimum_size = Vector2(248, 124)
 layout_mode = 2
 theme = ExtResource("4_3xlqu")
 theme_override_constants/outline_size = 0
 theme_override_constants/h_separation = 64
 theme_override_constants/icon_max_width = 64
-text = "HEAL"
+text = "SPECIAL"
 
 [node name="EscapeButton" type="Button" parent="UI/GridContainer"]
 custom_minimum_size = Vector2(248, 124)
@@ -146,3 +154,4 @@ theme_override_constants/icon_max_width = 64
 text = "INVENTORY"
 
 [connection signal="pressed" from="UI/GridContainer/AttackButton" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="UI/GridContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]

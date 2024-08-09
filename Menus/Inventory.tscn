@@ -1,0 +1,157 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4auyfhfikkr4"]
+
+[ext_resource type="Script" path="res://Menus/Inventory.gd" id="1_8p3ju"]
+[ext_resource type="Script" path="res://Menus/Slot.gd" id="2_l40bq"]
+
+[node name="Inventory" type="Node2D"]
+script = ExtResource("1_8p3ju")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 540.0
+offset_bottom = 959.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 532.0
+offset_bottom = 927.0
+columns = 4
+
+[node name="Slot 1" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 2" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 3" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 4" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 5" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 6" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 7" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 8" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 9" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 10" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 11" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 12" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 13" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 14" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 15" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 16" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 17" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 18" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 19" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 20" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 21" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 22" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 23" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 24" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 25" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 26" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 27" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")
+
+[node name="Slot 28" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+script = ExtResource("2_l40bq")

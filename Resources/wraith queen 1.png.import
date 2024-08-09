@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dna1efa6bkeyb"
-path="res://.godot/imported/dungeon 2.svg-e6a9af9d1b746311972ee3b616953c80.ctex"
+uid="uid://blo08i53pi8nv"
+path="res://.godot/imported/wraith queen 1.png-6660c14281fdcb2664a89163c4f56513.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dungeon 2.svg"
-dest_files=["res://.godot/imported/dungeon 2.svg-e6a9af9d1b746311972ee3b616953c80.ctex"]
+source_file="res://Resources/wraith queen 1.png"
+dest_files=["res://.godot/imported/wraith queen 1.png-6660c14281fdcb2664a89163c4f56513.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
