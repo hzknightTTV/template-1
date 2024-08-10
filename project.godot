@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 Globals="*res://Autoloads/Globals.gd"
 SceneManager="*res://Autoloads/SceneManager.gd"
+JsonData="*res://Autoloads/JSONData.gd"
 
 [display]
 

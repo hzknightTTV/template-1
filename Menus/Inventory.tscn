@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Menus/Slot.gd" id="2_l40bq"]
 
 [node name="Inventory" type="Node2D"]
+position = Vector2(8, 128)
 script = ExtResource("1_8p3ju")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -12,9 +13,33 @@ offset_bottom = 959.0
 
 [node name="GridContainer" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(128, 128)
-offset_right = 532.0
-offset_bottom = 927.0
+offset_left = -2.0
+offset_top = -121.0
+offset_right = 528.0
+offset_bottom = 834.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 columns = 4
+
+[node name="CloseButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "CLOSE"
+
+[node name="CloseButton2" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "X"
+
+[node name="CloseButton3" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "X"
+
+[node name="CloseButton4" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "X"
 
 [node name="Slot 1" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(128, 128)
@@ -132,26 +157,6 @@ layout_mode = 2
 script = ExtResource("2_l40bq")
 
 [node name="Slot 24" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-script = ExtResource("2_l40bq")
-
-[node name="Slot 25" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-script = ExtResource("2_l40bq")
-
-[node name="Slot 26" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-script = ExtResource("2_l40bq")
-
-[node name="Slot 27" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-script = ExtResource("2_l40bq")
-
-[node name="Slot 28" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 script = ExtResource("2_l40bq")

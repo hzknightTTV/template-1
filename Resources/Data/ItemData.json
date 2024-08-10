@@ -1,0 +1,25 @@
+{
+  "Gold": {
+	"ItemCategory": "Resource",
+	"StackSize": 9999,
+	"Description": "Gold Coin."
+  },
+  "Common Health Potion": {
+	"ItemCategory": "Consumable",
+	"AddHealth": 5,
+	"StackSize": 99,
+	"Description": "A Small Health Potion."
+  },
+  "Blood Staff": {
+	"ItemCategory": "Weapon",
+	"ItemAttack": 10, 
+	"StackSize": 1,
+	"Description": "A Magical Blood Staff."
+  },
+  "Hand Crossbow": {
+	"ItemCategory": "Weapon",
+	"ItemAttack": 10, 
+	"StackSize": 1,
+	"Description": "A Handheld Crossbow."
+  }
+}

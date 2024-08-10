@@ -1,8 +1,8 @@
 # Slot.gd (keep this comment)
 extends Panel
 
-var default_tex = preload("res://Resources/grid_1x1.jpg")
-var empty_tex = preload("res://Resources/grid_1x1.jpg")
+var default_tex = preload("res://Resources/grid_1x1 2.png")
+var empty_tex = preload("res://Resources/grid_1x1 2.png")
 
 var default_style: StyleBoxTexture = null
 var empty_style: StyleBoxTexture = null

@@ -7,17 +7,15 @@ extends Node2D
 @onready var inventory_button = $UI/GridContainer/InventoryButton  # Reference to the Inventory Button node
 
 var inventory_scene = preload("res://Menus/Inventory.tscn")  # Preload the inventory scene
-var inventory_instance = null  # Variable to hold the inventory instance
+var inventory_instance: Node = null  # Variable to hold the inventory instance
 
 var max_ap: int = 10  # Maximum AP the player can have
 
 func _ready():
 	if ap_timer:
-		print("AP Timer found, connecting timeout signal.")
 		ap_timer.connect("timeout", Callable(self, "_on_ap_timer_timeout"))
 		ap_timer.set_wait_time(20)  # Set the timer to 20 seconds (or any desired value)
 		ap_timer.start()
-		print("AP Timer started with wait time: ", ap_timer.wait_time)
 
 func _on_attack_button_pressed():
 	if player and enemy:
@@ -28,19 +26,19 @@ func _on_attack_button_pressed():
 			player.update_ap_label()  # Update the AP label after reducing AP
 			if enemy.hp > 0:
 				enemy.attack_player()
+			else:
+				print("Enemy defeated!")
 		else:
 			print("Not enough AP to attack.")
 	else:
 		print("Player or Enemy node is not found.")
 
 func _on_ap_timer_timeout():
-	print("AP Timer timeout signal received.")
 	if player.ap < max_ap:
 		player.ap += 1
 		player.update_ap_label()  # Update the AP label after gaining AP
 
 func _on_inventory_button_pressed():
-	print("Inventory button pressed.")
 	if inventory_instance == null:
 		inventory_instance = inventory_scene.instantiate()
 		add_child(inventory_instance)

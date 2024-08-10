@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfvhw1nl85xay"
-path="res://.godot/imported/blood staff 1.png-de80d322eaf41ded635b9f022383200f.ctex"
+uid="uid://dlgss1is4uhjs"
+path="res://.godot/imported/Hand Crossbow.png-f0bbcd299f28510a836bca12156916fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/blood staff 1.png"
-dest_files=["res://.godot/imported/blood staff 1.png-de80d322eaf41ded635b9f022383200f.ctex"]
+source_file="res://Resources/Item Icons/Hand Crossbow.png"
+dest_files=["res://.godot/imported/Hand Crossbow.png-f0bbcd299f28510a836bca12156916fb.ctex"]
 
 [params]
 

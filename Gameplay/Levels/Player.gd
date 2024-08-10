@@ -15,7 +15,12 @@ var defense: int = 10
 var strength: int = 10
 var weapon_damage: int = 0
 var experience: int = 0
-var ap: int = 10  # Action Points
+var ap: int = 10:
+	set(value):
+		ap = max(value, 0)
+		update_ap_label()
+	get:
+		return ap
 
 @onready var HealthLabel = $Panel/HBoxContainer/HP
 @onready var APLabel = $Panel/HBoxContainer/AP

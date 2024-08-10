@@ -14,7 +14,6 @@ var hp: int = 100:
 @onready var wraith_takes_damage = $WraithTakesDamage
 @onready var wraith_dies = $WraithDies
 
-
 var attack: int = 15
 var exp_reward: int = 50
 
@@ -34,12 +33,12 @@ func die():
 	award_exp()
 	
 	if wraith_dies:
-		await wraith_takes_damage.finished
+		if wraith_takes_damage.is_playing():
+			await wraith_takes_damage.finished
 		wraith_dies.play()
-		await wraith_dies.finished # Wait until the sound finishes playing
+		await wraith_dies.finished # Wait until the death sound finishes playing
 	
 	queue_free()  # Remove the enemy node after the sound effect
-
 
 func drop_loot():
 	var loot_table = [
